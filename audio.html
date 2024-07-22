@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Audio Player</title>
+  </head>
+  <body>
+    <audio id="audioPlayer" loop>
+      <source src="./audio.mp3" type="audio/mp3" />
+    </audio>
+    <script>
+      const audio = document.getElementById("audioPlayer");
+      audio.play();
+
+      window.addEventListener("message", (event) => {
+        if (event.data === "play") {
+          audio.play();
+        } else if (event.data === "pause") {
+          audio.pause();
+        }
+      });
+    </script>
+  </body>
+</html>
